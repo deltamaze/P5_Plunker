@@ -25,17 +25,9 @@ function setup() {
     world = engine.world;
     canvasMouse = Mouse.create(canvas.elt);
     canvasMouse.pixelRatio = pixelDensity();
-    
     mouseConstraint = MouseConstraint.create(engine, {
-        mouse: canvasMouse,
-        constraint: {
-            stiffness: 0.2,
-            render: {
-                visible: false
-            }
-        }
+        mouse: canvasMouse
     });
-    
     World.add(world, mouseConstraint);
     //create player
     player = new Player(250, 50, 8, world, Bodies, World);
@@ -85,10 +77,9 @@ function draw() {
     }
 
 }
-function mousePressed() { //player Input
-    //isMousePressed = true;
-    //console.log(mouseConstraint);
-}
+// function mousePressed() { //player Input
+//     isMousePressed = true;
+// }
 function mouseReleased() { //player Input
     isMousePressed = false;
 }
