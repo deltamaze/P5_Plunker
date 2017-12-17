@@ -1,6 +1,9 @@
 class GameEllipse {
 
-    constructor(ellipseBody, engineWorld, matterJsBodies, matterJsWorld) {
+    constructor(x,y,r, engineWorld, matterJsBodies, matterJsWorld) {
+        let ellipseBody = matterJsBodies.circle(x,y,r);
+        ellipseBody.friction=0;
+        ellipseBody.restitution=.95;
         matterJsWorld.add(engineWorld, ellipseBody);
         this.body = ellipseBody;
         //default color is white
