@@ -23,6 +23,7 @@ function setup() {
     let canvas = createCanvas(canvasHeight, canvasWidth);
     engine = Engine.create();
     world = engine.world;
+    Engine.run(engine);
     canvasMouse = Mouse.create(canvas.elt);
     canvasMouse.pixelRatio = pixelDensity();
     
@@ -65,7 +66,6 @@ function draw() {
         newParticle();
     }
     background(51);
-    Engine.update(engine);
     particles.forEach(function (particle) {
         particle.show();
     });
