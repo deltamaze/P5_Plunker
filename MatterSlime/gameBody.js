@@ -14,7 +14,6 @@ class GameBody {
         beginShape();
         for (var a = 0; a < this.body.vertices.length; a += 1) {
             vertex(this.body.vertices[a].x, this.body.vertices[a].y);
-            //console.log(this.body.vertices[a].x);
         }
         endShape(CLOSE);
     }
